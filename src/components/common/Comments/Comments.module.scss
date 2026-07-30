@@ -1,0 +1,74 @@
+.section {
+  background: var(--color-surface-soft);
+  overflow: hidden;
+}
+
+.composition {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 28rem;
+  margin-top: var(--space-xl);
+}
+
+.center {
+  width: min(70vw, 22rem);
+  height: min(70vw, 22rem);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-card);
+}
+
+.orbit {
+  position: absolute;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.cake {
+  top: 8%;
+  left: 18%;
+}
+
+.pancake {
+  right: 16%;
+  bottom: 18%;
+}
+
+.cardLeft,
+.cardRight {
+  position: absolute;
+  z-index: 2;
+}
+
+.cardLeft {
+  left: 0;
+  bottom: 12%;
+}
+
+.cardRight {
+  right: 0;
+  top: 18%;
+}
+
+@media (max-width: 900px) {
+  .composition {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    min-height: auto;
+  }
+
+  .orbit,
+  .cardLeft,
+  .cardRight {
+    position: static;
+  }
+
+  .orbit {
+    display: none;
+  }
+}
