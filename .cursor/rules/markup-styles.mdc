@@ -1,0 +1,32 @@
+---
+description: Семантика HTML, SCSS Modules, адаптив и доступность
+globs: "**/*.{jsx,scss}"
+alwaysApply: false
+---
+
+# Вёрстка и стили
+
+## Семантика
+
+Используй смысловые теги: `header`, `nav`, `main`, `section`, `article`, `footer`, `button`, `a`, `ul`/`li`, `h1`–`h6`, `figure`/`figcaption`, `form`, `label`.
+
+- Один `h1` на странице
+- Интерактив — `button` или `a`, не `div` с onClick без роли
+- Декоративные картинки — `alt=""`; контентные — осмысленный `alt`
+
+## Стили
+
+- Стили компонента — только в `ComponentName.module.scss`
+- Глобально (`src/styles/`) — reset, variables, typography, globals
+- Предпочитай Flexbox/Grid; избегай абсолютного позиционирования без нужды (кроме декора/floating как в макете)
+- Не используй `!important` без крайней причины
+
+## Адаптив
+
+- Mobile-first или desktop-first — выбери один подход и держись его в проекте
+- Секции не должны ломаться: читаемость, кликабельность, без горизонтального скролла страницы
+- Картинки — `max-width: 100%`, осмысленные размеры
+
+## Существующие UI
+
+Расширяй `Button`, `Title`, `Section`, `Container` через props/variants. Не дублируй их клонами с другим именем.

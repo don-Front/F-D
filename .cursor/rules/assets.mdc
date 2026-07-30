@@ -1,0 +1,38 @@
+---
+description: Ассеты, иконки, шрифты и референсы для F&D лендинга
+alwaysApply: true
+---
+
+# Ассеты
+
+## Куда класть
+
+| Тип | Путь |
+| --- | --- |
+| Фото/иллюстрации секций | `src/assets/images/` |
+| Иконки UI и соцсети (SVG) | `src/assets/icons/` |
+| Шрифты | `src/assets/fonts/` |
+| Макеты/референсы | `src/references/` |
+
+## Именование файлов
+
+`kebab-case`, по смыслу секции:
+
+```text
+hero-woman.png
+service-delivery.svg
+food-special-pizza.webp
+partner-grab.svg
+avatar-erick-smith.webp
+cta-girl-donuts.svg
+```
+
+Подпапки по секциям допустимы: `images/hero/`, `images/menu/`, `images/partners/`.
+
+## Правила
+
+- Предпочитай SVG для иконок/логотипов/иллюстраций; WebP/PNG для фото
+- Не коммить огромные исходники без оптимизации
+- Импорт в компоненты из `@/assets/...`
+- Референс в `src/references/` — только для сверки, не как UI-картинка на сайте
+- Пока ассета нет — явно помечай TODO, не выдумывай «похожий» чужой сток без согласования
