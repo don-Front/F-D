@@ -1,0 +1,24 @@
+.section {
+  background: linear-gradient(180deg, var(--color-surface-soft) 0%, #fff 100%);
+  overflow: hidden;
+}
+
+.trackWrap {
+  overflow-x: auto;
+  padding-block: var(--space-md);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  width: max-content;
+  min-width: 100%;
+  padding-inline: var(--container-padding);
+}
