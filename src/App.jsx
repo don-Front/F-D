@@ -1,14 +1,11 @@
-import Container from '@/components/layout/Container';
-import Title from '@/components/ui/Title';
+import MainLayout from '@/layouts/MainLayout';
+import Home from '@/pages/Home';
 
 function App() {
   return (
-    <main>
-      <Container>
-        <Title as="h1">Portfolio Starter</Title>
-        <p>React starter template ready for new projects.</p>
-      </Container>
-    </main>
+    <MainLayout>
+      <Home />
+    </MainLayout>
   );
 }
 
