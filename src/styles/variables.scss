@@ -1,24 +1,32 @@
 :root {
   --color-background: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-text: #1a1a1a;
-  --color-text-muted: #666666;
-  --color-primary: #1a1a1a;
+  --color-surface: #fef9f5;
+  --color-surface-soft: #fcf8f4;
+  --color-text: #1d1d1d;
+  --color-text-muted: #828282;
+  --color-primary: #f2994a;
+  --color-primary-hover: #e68938;
   --color-primary-contrast: #ffffff;
-  --color-border: #e0e0e0;
+  --color-border: #e8e0d8;
+  --color-footer: #1a1a1a;
+  --color-star: #f2c94c;
+  --color-partner: #9ca3af;
 
-  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-family-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-base: 'Poppins', 'Segoe UI', sans-serif;
+  --font-family-heading: 'Poppins', 'Segoe UI', sans-serif;
 
+  --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
+  --font-size-3xl: 2.75rem;
+  --font-size-4xl: 3.25rem;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
   --line-height-tight: 1.25;
@@ -31,14 +39,22 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4rem;
+  --space-4xl: 5rem;
 
-  --container-max-width: 75rem;
-  --container-padding: var(--space-md);
+  --container-max-width: 72.5rem;
+  --container-padding: 1.25rem;
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 12px 40px rgba(29, 29, 29, 0.08);
+  --shadow-soft: 0 8px 24px rgba(29, 29, 29, 0.06);
 
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
+
+  --header-height: 5rem;
 }
