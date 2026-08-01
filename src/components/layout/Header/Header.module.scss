@@ -37,7 +37,22 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     text-decoration: none;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.35rem;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: var(--radius-pill);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
 
     &:hover {
       color: var(--color-primary);
@@ -49,14 +64,7 @@
   color: var(--color-primary) !important;
 
   &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    background: var(--color-primary);
-    border-radius: var(--radius-pill);
+    transform: scaleX(1);
   }
 }
 

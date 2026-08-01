@@ -3,6 +3,10 @@
 @use './typography';
 @use './animations';
 
+html {
+  scroll-padding-top: var(--header-height);
+}
+
 body {
   background-color: var(--color-background);
 }

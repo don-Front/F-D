@@ -56,10 +56,11 @@ function Testimonials() {
         </button>
 
         <Reveal variant="right" className={styles.mediaWrap}>
-          <figure className={styles.media} key={`${item.id}-image`}>
+          <figure className={styles.media} key={item.id}>
             <img
+              key={item.image}
               src={item.image}
-              alt={`${item.name}`}
+              alt={item.name}
               className={styles.image}
             />
           </figure>
