@@ -2,9 +2,26 @@ import Rating from '@/components/ui/Rating';
 
 import styles from './FoodCard.module.scss';
 
-function FoodCard({ name, price, rating, image, featured = false }) {
+function FoodCard({
+  name,
+  price,
+  rating,
+  image,
+  featured = false,
+  className = '',
+  style,
+  ...props
+}) {
+  const classNames = [
+    styles.card,
+    featured ? styles.featured : '',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <article className={[styles.card, featured ? styles.featured : ''].filter(Boolean).join(' ')}>
+    <article className={classNames} style={style} {...props}>
       <img src={image} alt={name} className={styles.image} />
       <span className={styles.price}>{price}</span>
       <div className={styles.meta}>

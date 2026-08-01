@@ -10,24 +10,44 @@ function SliderControls({
   active = 2,
   onPrev,
   onNext,
+  onSelect,
   className = '',
 }) {
   const classNames = [styles.controls, className].filter(Boolean).join(' ');
 
   return (
     <div className={classNames}>
-      <button type="button" className={styles.arrow} onClick={onPrev} aria-label="Previous">
+      <button
+        type="button"
+        className={styles.arrow}
+        onClick={onPrev}
+        aria-label="Previous"
+      >
         <Icon src={iconArrowLeft} size={18} />
       </button>
+
       <div className={styles.dots} role="tablist" aria-label="Slides">
         {Array.from({ length: total }, (_, index) => (
-          <span
+          <button
             key={index}
-            className={[styles.dot, index === active ? styles.active : ''].filter(Boolean).join(' ')}
+            type="button"
+            role="tab"
+            aria-selected={index === active}
+            aria-label={`Go to slide ${index + 1}`}
+            className={[styles.dot, index === active ? styles.active : '']
+              .filter(Boolean)
+              .join(' ')}
+            onClick={() => onSelect?.(index)}
           />
         ))}
       </div>
-      <button type="button" className={styles.arrow} onClick={onNext} aria-label="Next">
+
+      <button
+        type="button"
+        className={styles.arrow}
+        onClick={onNext}
+        aria-label="Next"
+      >
         <Icon src={iconArrowRight} size={18} />
       </button>
     </div>

@@ -2,7 +2,6 @@ import { useInView } from '@/hooks/useInView';
 
 import CommentCard from '@/components/common/CommentCard';
 import Reveal from '@/components/common/Reveal';
-import SliderControls from '@/components/common/SliderControls';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -20,11 +19,11 @@ function Comments() {
   return (
     <Section className={styles.section} aria-labelledby="comments-title">
       <Container>
-        <Reveal variant="fade">
-          <SliderControls total={6} active={2} />
-        </Reveal>
-        <Reveal variant="up" delay={80}>
-          <SectionHeading eyebrow="- What they are say -" title="Comment for Food" />
+        <Reveal variant="up">
+          <SectionHeading
+            eyebrow="- What they are say -"
+            title="Comment for Food"
+          />
         </Reveal>
 
         <div
@@ -45,12 +44,16 @@ function Comments() {
           <img
             src={COMMENT_CARDS[0].avatar}
             alt=""
-            className={[styles.layer, styles.orbit, styles.avatarLeft].join(' ')}
+            className={[styles.layer, styles.orbit, styles.avatarLeft].join(
+              ' ',
+            )}
           />
           <img
             src={COMMENT_CARDS[1].avatar}
             alt=""
-            className={[styles.layer, styles.orbit, styles.avatarRight].join(' ')}
+            className={[styles.layer, styles.orbit, styles.avatarRight].join(
+              ' ',
+            )}
           />
           <img
             src={foodPancake}

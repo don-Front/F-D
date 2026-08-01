@@ -17,6 +17,11 @@
   background: #fff;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
+  transition: transform var(--transition-fast);
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .dots {
@@ -26,12 +31,19 @@
 }
 
 .dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
   background: #d9d9d9;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .active {
   background: var(--color-primary);
+  transform: scale(1.25);
 }
