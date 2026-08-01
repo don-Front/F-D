@@ -10,6 +10,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import styles from './TrendingFood.module.scss';
 
 import { TRENDING_FOOD } from '@/data/menu';
+import { useI18n } from '@/i18n/I18nProvider';
 
 function getCircularOffset(index, active, total) {
   let offset = index - active;
@@ -24,6 +25,7 @@ function getCircularOffset(index, active, total) {
 }
 
 function TrendingFood() {
+  const { t } = useI18n();
   const [active, setActive] = useState(2);
   const total = TRENDING_FOOD.length;
 
@@ -69,7 +71,10 @@ function TrendingFood() {
     >
       <Container>
         <Reveal variant="up">
-          <SectionHeading eyebrow="- Popular Delivery -" title="Trending food" />
+          <SectionHeading
+            eyebrow={t('trending.eyebrow')}
+            title={t('trending.title')}
+          />
         </Reveal>
       </Container>
 
@@ -89,11 +94,15 @@ function TrendingFood() {
                 .join(' ')}
               style={style}
               onClick={() => handleSelect(index)}
-              aria-label={`${item.name}, ${item.price}`}
+              aria-label={`${t(`menu.${item.id}`)}, ${item.price}`}
               aria-current={isActive ? 'true' : undefined}
               tabIndex={isActive ? 0 : -1}
             >
-              <FoodCard {...item} featured={isActive} />
+              <FoodCard
+                {...item}
+                name={t(`menu.${item.id}`)}
+                featured={isActive}
+              />
             </button>
           ))}
         </div>

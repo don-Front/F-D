@@ -5,13 +5,16 @@ import Section from '@/components/ui/Section';
 import styles from './Partners.module.scss';
 
 import { PARTNERS } from '@/data/partners';
+import { useI18n } from '@/i18n/I18nProvider';
 
 function Partners() {
+  const { t } = useI18n();
+
   return (
-    <Section className={styles.partners} aria-label="Supported by">
+    <Section className={styles.partners} aria-label={t('partners.label')}>
       <Container>
         <Reveal variant="fade">
-          <p className={styles.label}>Support by :</p>
+          <p className={styles.label}>{t('partners.label')}</p>
         </Reveal>
         <ul className={styles.list}>
           {PARTNERS.map((partner, index) => (

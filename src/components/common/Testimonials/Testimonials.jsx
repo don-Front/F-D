@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import Reveal from '@/components/common/Reveal';
 import Container from '@/components/layout/Container';
@@ -11,12 +11,29 @@ import styles from './Testimonials.module.scss';
 
 import iconArrowLeft from '@/assets/icons/icon-arrow-left.svg';
 import iconArrowRight from '@/assets/icons/icon-arrow-right.svg';
-import { FEATURED_TESTIMONIALS } from '@/data/testimonials';
+import { FEATURED_TESTIMONIAL_ASSETS } from '@/data/testimonials';
+import { useI18n } from '@/i18n/I18nProvider';
 
 function Testimonials() {
+  const { t, dict } = useI18n();
   const [active, setActive] = useState(0);
-  const total = FEATURED_TESTIMONIALS.length;
-  const item = FEATURED_TESTIMONIALS[active];
+
+  const items = useMemo(
+    () =>
+      FEATURED_TESTIMONIAL_ASSETS.map((asset) => {
+        const copy = dict.testimonials.items.find((item) => item.id === asset.id);
+        return {
+          ...asset,
+          name: copy?.name ?? asset.id,
+          role: copy?.role ?? '',
+          text: copy?.text ?? '',
+        };
+      }),
+    [dict],
+  );
+
+  const total = items.length;
+  const item = items[active];
 
   const handlePrev = useCallback(() => {
     setActive((prev) => (prev - 1 + total) % total);
@@ -42,7 +59,7 @@ function Testimonials() {
           <figure className={styles.media} key={`${item.id}-image`}>
             <img
               src={item.image}
-              alt={`${item.name} enjoying food from F&D`}
+              alt={`${item.name}`}
               className={styles.image}
             />
           </figure>
@@ -50,8 +67,8 @@ function Testimonials() {
 
         <Reveal variant="left" delay={140} className={styles.content}>
           <SectionHeading
-            eyebrow="- What they say -"
-            title="What they say about us"
+            eyebrow={t('testimonials.eyebrow')}
+            title={t('testimonials.title')}
             align="left"
             className={styles.heading}
           />

@@ -1,5 +1,3 @@
-import { FOOTER_COLUMNS } from '@/constants/navigation';
-
 import Container from '@/components/layout/Container';
 import Icon from '@/components/ui/Icon';
 import Logo from '@/components/ui/Logo';
@@ -10,6 +8,7 @@ import iconEmail from '@/assets/icons/icon-email.svg';
 import iconFacebook from '@/assets/icons/icon-facebook.svg';
 import iconInstagram from '@/assets/icons/icon-instagram.svg';
 import iconTwitter from '@/assets/icons/icon-twitter.svg';
+import { useI18n } from '@/i18n/I18nProvider';
 
 const SOCIAL_ICONS = [
   { id: 'facebook', src: iconFacebook, label: 'Facebook' },
@@ -19,6 +18,48 @@ const SOCIAL_ICONS = [
 ];
 
 function Footer() {
+  const { t } = useI18n();
+  const year = new Date().getFullYear();
+
+  const columns = [
+    {
+      title: t('footer.product'),
+      links: [
+        { label: t('footer.support'), href: '#contact' },
+        { label: t('footer.guide'), href: '#services' },
+      ],
+    },
+    {
+      title: t('footer.terms'),
+      links: [
+        { label: t('footer.tos'), href: '#' },
+        { label: t('footer.privacy'), href: '#' },
+      ],
+    },
+    {
+      title: t('footer.company'),
+      links: [
+        { label: t('nav.home'), href: '#home' },
+        { label: t('footer.about'), href: '#services' },
+        { label: t('footer.contactUs'), href: '#contact' },
+      ],
+    },
+    {
+      title: t('footer.contact'),
+      links: [
+        { label: '(+62) 893 9123 92190', href: 'tel:+62893912392190' },
+        { label: 'hello@fd-delivery.com', href: 'mailto:hello@fd-delivery.com' },
+      ],
+    },
+    {
+      title: t('footer.delivery'),
+      links: [
+        { label: t('footer.cityExpress'), href: '#menu' },
+        { label: t('footer.neighborhood'), href: '#services' },
+      ],
+    },
+  ];
+
   return (
     <footer id="contact" className={styles.footer}>
       <Container>
@@ -36,7 +77,7 @@ function Footer() {
             </ul>
           </div>
 
-          {FOOTER_COLUMNS.map((column) => (
+          {columns.map((column) => (
             <div key={column.title} className={styles.column}>
               <h3 className={styles.columnTitle}>{column.title}</h3>
               <ul className={styles.links}>
@@ -50,7 +91,7 @@ function Footer() {
           ))}
         </div>
 
-        <p className={styles.copy}>© F&D {new Date().getFullYear()} — All rights reserved</p>
+        <p className={styles.copy}>{t('footer.copy', { year })}</p>
       </Container>
     </footer>
   );

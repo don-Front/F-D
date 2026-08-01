@@ -8,9 +8,11 @@ import Section from '@/components/ui/Section';
 import styles from './DiscountCta.module.scss';
 
 import ctaImage from '@/assets/images/cta/cta-girl-donuts.png';
+import { useI18n } from '@/i18n/I18nProvider';
 
 function DiscountCta() {
   const { ref, isInView } = useInView({ threshold: 0.25 });
+  const { t } = useI18n();
 
   return (
     <Section className={styles.section} aria-labelledby="discount-title">
@@ -29,29 +31,26 @@ function DiscountCta() {
 
           <Reveal variant="left" delay={160} className={styles.content}>
             <h2 id="discount-title" className={styles.title}>
-              Get more discount if you order from us
+              {t('cta.title')}
             </h2>
-            <p className={styles.text}>
-              Join our newsletter for exclusive promos, seasonal deals, and early
-              access to new menu drops.
-            </p>
+            <p className={styles.text}>{t('cta.text')}</p>
             <form
               className={styles.form}
               onSubmit={(event) => event.preventDefault()}
             >
               <label className={styles.srOnly} htmlFor="email">
-                Your Email Address
+                {t('cta.emailLabel')}
               </label>
               <input
                 id="email"
                 type="email"
                 name="email"
-                placeholder="Your Email Address"
+                placeholder={t('cta.placeholder')}
                 className={styles.input}
                 required
               />
               <Button type="submit" variant="dark" className={styles.submit}>
-                Get
+                {t('cta.button')}
               </Button>
             </form>
           </Reveal>
