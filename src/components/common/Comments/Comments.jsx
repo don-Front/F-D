@@ -21,7 +21,7 @@ function Comments() {
       <Container>
         <Reveal variant="up">
           <SectionHeading
-            eyebrow="- What they are say -"
+            eyebrow="- What they say -"
             title="Comment for Food"
           />
         </Reveal>

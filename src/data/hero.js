@@ -10,7 +10,7 @@ import review3 from '@/assets/images/hero/review-avatar-3.png';
 export const HERO = {
   titleLines: ["Don't wanna", 'Make you have', 'A bad day'],
   description:
-    'Our job is delivering a delicious food with fast , free delivery and easy.',
+    'We deliver your favorite meals fast — with free delivery and an easy ordering experience.',
   primaryCta: 'Order Now',
   secondaryCta: 'How to order',
   reviewLabel: 'Customer Review',
@@ -24,7 +24,7 @@ export const HERO = {
     foodBadge: badgeFood,
     userBadge: badgeUser,
     quote:
-      'When you are to lazy for cook, just click and they will come quickly',
+      'Too tired to cook? Just tap once and a hot meal will be on its way.',
     reviewsCount: '160K+',
   },
 };

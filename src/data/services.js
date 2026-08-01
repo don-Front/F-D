@@ -6,19 +6,22 @@ export const SERVICES = [
   {
     id: 'delivery',
     title: 'Delivery Food',
-    description: 'Lorem ipsum dolor sit amet, consectetur',
+    description:
+      'Hot meals from nearby kitchens, carefully packed so everything arrives fresh.',
     image: serviceDelivery,
   },
   {
     id: 'easy-order',
     title: 'Easy to order',
-    description: 'Lorem ipsum dolor sit amet, consectetur',
+    description:
+      'Browse the menu, customize your dish, and checkout in a few taps.',
     image: serviceEasyOrder,
   },
   {
     id: 'fastest',
     title: 'Fastest Delivery',
-    description: 'Lorem ipsum dolor sit amet, consectetur',
+    description:
+      'Live tracking and priority routes keep your order on time, every time.',
     image: serviceFastest,
   },
 ];

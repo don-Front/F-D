@@ -9,8 +9,8 @@ export const FOOTER_COLUMNS = [
   {
     title: 'Our Product',
     links: [
-      { label: 'Support', href: '#' },
-      { label: 'Guide', href: '#' },
+      { label: 'Support', href: '#contact' },
+      { label: 'Order Guide', href: '#services' },
     ],
   },
   {
@@ -24,22 +24,22 @@ export const FOOTER_COLUMNS = [
     title: 'Company',
     links: [
       { label: 'Home', href: '#home' },
-      { label: 'About Us', href: '#' },
+      { label: 'About Us', href: '#services' },
       { label: 'Contact Us', href: '#contact' },
     ],
   },
   {
     title: 'Contact',
     links: [
-      { label: '(+62) 893912392190', href: 'tel:+62893912392190' },
-      { label: 'agecnycr@gmail.com', href: 'mailto:agecnycr@gmail.com' },
+      { label: '(+62) 893 9123 92190', href: 'tel:+62893912392190' },
+      { label: 'hello@fd-delivery.com', href: 'mailto:hello@fd-delivery.com' },
     ],
   },
   {
     title: 'Food Delivery',
     links: [
-      { label: 'KFC Delivery', href: '#' },
-      { label: 'Bungo Tanjung Delivery', href: '#' },
+      { label: 'City Express', href: '#menu' },
+      { label: 'Neighborhood Couriers', href: '#services' },
     ],
   },
 ];
@@ -47,6 +47,6 @@ export const FOOTER_COLUMNS = [
 export const SOCIAL_LINKS = [
   { id: 'facebook', label: 'Facebook', href: '#' },
   { id: 'instagram', label: 'Instagram', href: '#' },
-  { id: 'email', label: 'Email', href: 'mailto:agecnycr@gmail.com' },
+  { id: 'email', label: 'Email', href: 'mailto:hello@fd-delivery.com' },
   { id: 'twitter', label: 'Twitter', href: '#' },
 ];

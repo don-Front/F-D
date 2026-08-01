@@ -50,7 +50,7 @@ function Footer() {
           ))}
         </div>
 
-        <p className={styles.copy}>© NameBrand 2022 - All Rights Reserved</p>
+        <p className={styles.copy}>© F&D {new Date().getFullYear()} — All rights reserved</p>
       </Container>
     </footer>
   );

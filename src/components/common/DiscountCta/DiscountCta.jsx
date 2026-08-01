@@ -32,8 +32,8 @@ function DiscountCta() {
               Get more discount if you order from us
             </h2>
             <p className={styles.text}>
-              Join with us then you must have get a discount and get promo from us
-              to you , enjoy and happy to order.
+              Join our newsletter for exclusive promos, seasonal deals, and early
+              access to new menu drops.
             </p>
             <form
               className={styles.form}

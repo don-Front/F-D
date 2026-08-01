@@ -26,6 +26,7 @@
   display: grid;
   place-items: end center;
   min-height: 22rem;
+  animation: fadeSlide 0.45s ease;
 }
 
 .image {
@@ -35,6 +36,18 @@
   max-height: 28rem;
   object-fit: contain;
   object-position: bottom center;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .content {
@@ -50,6 +63,7 @@
   align-items: center;
   gap: 0.85rem;
   margin-bottom: var(--space-lg);
+  animation: fadeSlide 0.4s ease;
 }
 
 .avatar {
@@ -75,10 +89,13 @@
   color: var(--color-text-muted);
   font-size: var(--font-size-base);
   line-height: 1.7;
+  animation: fadeSlide 0.4s ease;
 }
 
 .navBtn {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -89,12 +106,7 @@
   background: #fff;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
-
-  @media (min-width: 960px) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+  z-index: 2;
 }
 
 .prev {
