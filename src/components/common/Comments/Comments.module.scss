@@ -62,24 +62,6 @@
   transition-delay: 220ms;
 }
 
-.avatarLeft {
-  left: 22%;
-  bottom: 28%;
-  width: 5rem;
-  height: 5rem;
-  transform: translate(-2rem, 1rem) scale(0.5);
-  transition-delay: 300ms;
-}
-
-.avatarRight {
-  top: 18%;
-  right: 18%;
-  width: 5rem;
-  height: 5rem;
-  transform: translate(2rem, -1rem) scale(0.5);
-  transition-delay: 340ms;
-}
-
 .pancake {
   right: 14%;
   bottom: 16%;
@@ -129,9 +111,7 @@
   }
 
   .cake,
-  .pancake,
-  .avatarLeft,
-  .avatarRight {
+  .pancake {
     display: none;
   }
 

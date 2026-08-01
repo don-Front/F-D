@@ -42,20 +42,6 @@ function Comments() {
             className={[styles.layer, styles.center].join(' ')}
           />
           <img
-            src={COMMENT_CARDS[0].avatar}
-            alt=""
-            className={[styles.layer, styles.orbit, styles.avatarLeft].join(
-              ' ',
-            )}
-          />
-          <img
-            src={COMMENT_CARDS[1].avatar}
-            alt=""
-            className={[styles.layer, styles.orbit, styles.avatarRight].join(
-              ' ',
-            )}
-          />
-          <img
             src={foodPancake}
             alt=""
             className={[styles.layer, styles.orbit, styles.pancake].join(' ')}
