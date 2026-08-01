@@ -1,6 +1,7 @@
 @use './reset';
 @use './variables';
 @use './typography';
+@use './animations';
 
 body {
   background-color: var(--color-background);

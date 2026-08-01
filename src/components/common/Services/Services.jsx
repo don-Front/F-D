@@ -1,3 +1,4 @@
+import Reveal from '@/components/common/Reveal';
 import ServiceCard from '@/components/common/ServiceCard';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
@@ -9,15 +10,23 @@ import { SERVICES } from '@/data/services';
 
 function Services() {
   return (
-    <Section id="services" className={styles.services} aria-labelledby="services-title">
+    <Section
+      id="services"
+      className={styles.services}
+      aria-labelledby="services-title"
+    >
       <Container>
-        <SectionHeading
-          eyebrow="- Our Services -"
-          title="Our serve just for you"
-        />
+        <Reveal variant="up">
+          <SectionHeading
+            eyebrow="- Our Services -"
+            title="Our serve just for you"
+          />
+        </Reveal>
         <div className={styles.grid}>
-          {SERVICES.map((service) => (
-            <ServiceCard key={service.id} {...service} />
+          {SERVICES.map((service, index) => (
+            <Reveal key={service.id} variant="up" delay={120 + index * 120}>
+              <ServiceCard {...service} />
+            </Reveal>
           ))}
         </div>
       </Container>

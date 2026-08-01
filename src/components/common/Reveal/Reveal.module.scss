@@ -1,0 +1,41 @@
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.up {
+  transform: translateY(1.5rem);
+}
+
+.fade {
+  transform: none;
+}
+
+.scale {
+  transform: scale(0.92);
+}
+
+.left {
+  transform: translateX(2rem);
+}
+
+.right {
+  transform: translateX(-2rem);
+}
+
+.reveal[data-visible] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

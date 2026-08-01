@@ -1,3 +1,14 @@
+@keyframes floatIdle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+}
+
 .section {
   padding-bottom: var(--space-4xl);
 }
@@ -17,11 +28,65 @@
   }
 }
 
+.visual {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 22rem);
+}
+
 .image {
   display: block;
-  width: min(100%, 22rem);
-  margin-inline: auto;
+  width: 100%;
   height: auto;
+  opacity: 0;
+  transform: translateY(1.5rem) scale(0.92);
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.banner[data-assembled='true'] .image {
+  opacity: 1;
+  transform: none;
+  animation: floatIdle 4.5s ease-in-out 0.9s infinite;
+}
+
+.spark {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s ease;
+}
+
+.sparkA {
+  top: 12%;
+  left: 10%;
+  transition-delay: 280ms;
+}
+
+.sparkB {
+  top: 28%;
+  right: 8%;
+  width: 0.8rem;
+  height: 0.8rem;
+  transition-delay: 360ms;
+}
+
+.sparkC {
+  bottom: 22%;
+  left: 18%;
+  transition-delay: 420ms;
+}
+
+.banner[data-assembled='true'] .spark {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .content {

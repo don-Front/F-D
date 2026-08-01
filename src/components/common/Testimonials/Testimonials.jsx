@@ -1,3 +1,4 @@
+import Reveal from '@/components/common/Reveal';
 import Container from '@/components/layout/Container';
 import Icon from '@/components/ui/Icon';
 import Rating from '@/components/ui/Rating';
@@ -16,15 +17,25 @@ function Testimonials() {
   return (
     <Section className={styles.section} aria-labelledby="about-title">
       <Container className={styles.grid}>
-        <button type="button" className={[styles.navBtn, styles.prev].join(' ')} aria-label="Previous review">
+        <button
+          type="button"
+          className={[styles.navBtn, styles.prev].join(' ')}
+          aria-label="Previous review"
+        >
           <Icon src={iconArrowLeft} size={18} />
         </button>
 
-        <figure className={styles.media}>
-          <img src={item.image} alt="Customer enjoying pizza" className={styles.image} />
-        </figure>
+        <Reveal variant="right" className={styles.mediaWrap}>
+          <figure className={styles.media}>
+            <img
+              src={item.image}
+              alt="Customer enjoying pizza"
+              className={styles.image}
+            />
+          </figure>
+        </Reveal>
 
-        <div className={styles.content}>
+        <Reveal variant="left" delay={140} className={styles.content}>
           <SectionHeading
             eyebrow="- What they are say -"
             title="What they are says about us"
@@ -42,9 +53,13 @@ function Testimonials() {
 
           <blockquote className={styles.quote}>“{item.text}”</blockquote>
           <Rating value={item.rating.toFixed(1)} />
-        </div>
+        </Reveal>
 
-        <button type="button" className={[styles.navBtn, styles.next].join(' ')} aria-label="Next review">
+        <button
+          type="button"
+          className={[styles.navBtn, styles.next].join(' ')}
+          aria-label="Next review"
+        >
           <Icon src={iconArrowRight} size={18} />
         </button>
       </Container>

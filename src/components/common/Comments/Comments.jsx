@@ -1,4 +1,7 @@
+import { useInView } from '@/hooks/useInView';
+
 import CommentCard from '@/components/common/CommentCard';
+import Reveal from '@/components/common/Reveal';
 import SliderControls from '@/components/common/SliderControls';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
@@ -12,19 +15,57 @@ import foodPancake from '@/assets/images/comments/food-pancake.png';
 import { COMMENT_CARDS } from '@/data/testimonials';
 
 function Comments() {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   return (
     <Section className={styles.section} aria-labelledby="comments-title">
       <Container>
-        <SliderControls total={6} active={2} />
-        <SectionHeading eyebrow="- What they are say -" title="Comment for Food" />
+        <Reveal variant="fade">
+          <SliderControls total={6} active={2} />
+        </Reveal>
+        <Reveal variant="up" delay={80}>
+          <SectionHeading eyebrow="- What they are say -" title="Comment for Food" />
+        </Reveal>
 
-        <div className={styles.composition}>
-          <img src={foodCake} alt="" className={[styles.orbit, styles.cake].join(' ')} />
-          <img src={commentsPizza} alt="Pizza" className={styles.center} />
-          <img src={foodPancake} alt="" className={[styles.orbit, styles.pancake].join(' ')} />
+        <div
+          ref={ref}
+          className={styles.composition}
+          data-assembled={isInView || undefined}
+        >
+          <img
+            src={foodCake}
+            alt=""
+            className={[styles.layer, styles.orbit, styles.cake].join(' ')}
+          />
+          <img
+            src={commentsPizza}
+            alt="Pizza"
+            className={[styles.layer, styles.center].join(' ')}
+          />
+          <img
+            src={COMMENT_CARDS[0].avatar}
+            alt=""
+            className={[styles.layer, styles.orbit, styles.avatarLeft].join(' ')}
+          />
+          <img
+            src={COMMENT_CARDS[1].avatar}
+            alt=""
+            className={[styles.layer, styles.orbit, styles.avatarRight].join(' ')}
+          />
+          <img
+            src={foodPancake}
+            alt=""
+            className={[styles.layer, styles.orbit, styles.pancake].join(' ')}
+          />
 
-          <CommentCard {...COMMENT_CARDS[0]} className={styles.cardLeft} />
-          <CommentCard {...COMMENT_CARDS[1]} className={styles.cardRight} />
+          <CommentCard
+            {...COMMENT_CARDS[0]}
+            className={[styles.layer, styles.cardLeft].join(' ')}
+          />
+          <CommentCard
+            {...COMMENT_CARDS[1]}
+            className={[styles.layer, styles.cardRight].join(' ')}
+          />
         </div>
       </Container>
     </Section>

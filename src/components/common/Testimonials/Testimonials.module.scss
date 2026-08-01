@@ -14,17 +14,27 @@
   }
 }
 
+.mediaWrap {
+  width: 100%;
+}
+
 .media {
   margin: 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--color-primary);
+  display: grid;
+  place-items: end center;
+  min-height: 22rem;
 }
 
 .image {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 28rem;
+  object-fit: contain;
+  object-position: bottom center;
 }
 
 .content {

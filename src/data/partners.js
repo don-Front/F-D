@@ -1,8 +1,8 @@
-import partnerDana from '@/assets/images/partners/partner-dana.svg';
-import partnerGojek from '@/assets/images/partners/partner-gojek.svg';
-import partnerGrab from '@/assets/images/partners/partner-grab.svg';
-import partnerShopeepay from '@/assets/images/partners/partner-shopeepay.svg';
-import partnerZomato from '@/assets/images/partners/partner-zomato.svg';
+import partnerDana from '@/assets/images/partners/partner-dana.png';
+import partnerGojek from '@/assets/images/partners/partner-gojek.png';
+import partnerGrab from '@/assets/images/partners/partner-grab.png';
+import partnerShopeepay from '@/assets/images/partners/partner-shopeepay.png';
+import partnerZomato from '@/assets/images/partners/partner-zomato.png';
 
 export const PARTNERS = [
   { id: 'gojek', name: 'Gojek', src: partnerGojek },

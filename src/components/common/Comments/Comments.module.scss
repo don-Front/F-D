@@ -1,3 +1,14 @@
+@keyframes floatIdle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+}
+
 .section {
   background: var(--color-surface-soft);
   overflow: hidden;
@@ -7,8 +18,20 @@
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 28rem;
+  min-height: 32rem;
   margin-top: var(--space-xl);
+}
+
+.layer {
+  opacity: 0;
+  transition:
+    opacity 0.55s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.composition[data-assembled='true'] .layer {
+  opacity: 1;
+  transform: none;
 }
 
 .center {
@@ -17,41 +40,78 @@
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--shadow-card);
+  transform: scale(0.7);
+  transition-delay: 80ms;
+  z-index: 1;
 }
 
 .orbit {
   position: absolute;
-  width: 5.5rem;
-  height: 5.5rem;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--shadow-soft);
+  z-index: 2;
 }
 
 .cake {
-  top: 8%;
-  left: 18%;
+  top: 6%;
+  left: 16%;
+  width: 5.5rem;
+  height: 5.5rem;
+  transform: translate(-2rem, -1.5rem) scale(0.5);
+  transition-delay: 220ms;
+}
+
+.avatarLeft {
+  left: 22%;
+  bottom: 28%;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(-2rem, 1rem) scale(0.5);
+  transition-delay: 300ms;
+}
+
+.avatarRight {
+  top: 18%;
+  right: 18%;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(2rem, -1rem) scale(0.5);
+  transition-delay: 340ms;
 }
 
 .pancake {
-  right: 16%;
-  bottom: 18%;
+  right: 14%;
+  bottom: 16%;
+  width: 5.5rem;
+  height: 5.5rem;
+  transform: translate(2rem, 1.5rem) scale(0.5);
+  transition-delay: 380ms;
 }
 
 .cardLeft,
 .cardRight {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 
 .cardLeft {
   left: 0;
-  bottom: 12%;
+  bottom: 10%;
+  transform: translateX(-2rem);
+  transition-delay: 450ms;
 }
 
 .cardRight {
   right: 0;
-  top: 18%;
+  top: 14%;
+  transform: translateX(2rem);
+  transition-delay: 500ms;
+}
+
+.composition[data-assembled='true'] .cake,
+.composition[data-assembled='true'] .pancake {
+  animation: floatIdle 4.2s ease-in-out 0.9s infinite;
 }
 
 @media (max-width: 900px) {
@@ -68,7 +128,15 @@
     position: static;
   }
 
-  .orbit {
+  .cake,
+  .pancake,
+  .avatarLeft,
+  .avatarRight {
     display: none;
+  }
+
+  .layer {
+    opacity: 1;
+    transform: none;
   }
 }

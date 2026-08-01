@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import FoodCard from '@/components/common/FoodCard';
+import Reveal from '@/components/common/Reveal';
 import SliderControls from '@/components/common/SliderControls';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
@@ -18,25 +19,39 @@ function TrendingFood() {
   const handleNext = () => setActive((prev) => (prev + 1) % total);
 
   return (
-    <Section id="menu" className={styles.section} aria-labelledby="trending-title">
+    <Section
+      id="menu"
+      className={styles.section}
+      aria-labelledby="trending-title"
+    >
       <Container>
-        <SectionHeading eyebrow="- Popular Delivery -" title="Trending food" />
+        <Reveal variant="up">
+          <SectionHeading eyebrow="- Popular Delivery -" title="Trending food" />
+        </Reveal>
       </Container>
 
-      <div className={styles.trackWrap}>
-        <div className={styles.track}>
-          {TRENDING_FOOD.map((item, index) => (
-            <FoodCard key={item.id} {...item} featured={index === active} />
-          ))}
+      <Reveal variant="scale" delay={120}>
+        <div className={styles.trackWrap}>
+          <div className={styles.track}>
+            {TRENDING_FOOD.map((item, index) => (
+              <FoodCard
+                key={item.id}
+                {...item}
+                featured={index === active}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </Reveal>
 
-      <SliderControls
-        total={total}
-        active={active}
-        onPrev={handlePrev}
-        onNext={handleNext}
-      />
+      <Reveal variant="fade" delay={220}>
+        <SliderControls
+          total={total}
+          active={active}
+          onPrev={handlePrev}
+          onNext={handleNext}
+        />
+      </Reveal>
     </Section>
   );
 }
